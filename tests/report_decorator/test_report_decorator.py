@@ -7,6 +7,7 @@ def test_decorar_relatorio():
     products = JsonImporter.import_data(
         "./inventory_report/data/inventory.json"
     )
+
     colored_report = ColoredReport(SimpleReport())
     oldest_fab = ("Data de fabricação mais antiga:", "2020-09-06")
     closest_exp = ("Data de validade mais próxima:", "2023-09-17")
