@@ -28,7 +28,7 @@ class Inventory:
             reader = file.read()
             return xmltodict.parse(reader)["dataset"]["record"]
 
-    def indent_type_file(path):
+    def verify_type_file(path):
         if path.endswith(".csv"):
             return Inventory.read_file_csv(path)
 
