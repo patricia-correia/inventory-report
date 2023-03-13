@@ -9,8 +9,10 @@ class Inventory:
     @staticmethod
     def import_data(path, type):
         reports_list = Inventory.read_file_csv(path)
+
         if type == "simples":
             return SimpleReport.generate(reports_list)
+
         return CompleteReport.generate(reports_list)
 
     def read_file_csv(path):
