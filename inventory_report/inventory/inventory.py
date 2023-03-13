@@ -18,22 +18,22 @@ class Inventory:
             reader = csv.DictReader(file, delimiter=",", quotechar='"')
             return list(reader)
 
-    def read_file_json(path):
-        with open(path) as file:
+    def read_file_json(url):
+        with open(url) as file:
             reader = file.read()
             return json.loads(reader)
 
-    def read_file_xml(path):
-        with open(path) as file:
+    def read_file_xml(url):
+        with open(url) as file:
             reader = file.read()
             return xmltodict.parse(reader)["dataset"]["record"]
 
-    def verify_type_file(path):
-        if path.endswith(".csv"):
-            return Inventory.read_file_csv(path)
+    def verify_type_file(url):
+        if url.endswith(".csv"):
+            return Inventory.read_file_csv(url)
 
-        if path.endswith(".json"):
-            return Inventory.read_file_json(path)
+        if url.endswith(".json"):
+            return Inventory.read_file_json(url)
 
-        if path.endswith(".xml"):
-            return Inventory.read_file_xml(path)
+        if url.endswith(".xml"):
+            return Inventory.read_file_xml(url)
